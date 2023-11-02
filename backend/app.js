@@ -17,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/products", (req, res) => {
+  // map the products and add a index (product_id) to all the products
   res.json(products);
 });
 
@@ -41,13 +42,14 @@ app.post("/api/ask", async (req, res) => {
   }
 });
 
-app.post("/api/personalize_products", (req, res) => {
+app.post("/api/personalize_product", (req, res) => {
   const schema = Joi.object({
+    product_id: Joi.number().required,
     age: Joi.number().required(),
     sex: Joi.string().required(),
-    height: Joi.number().required(),
-    weight: Joi.number().required(),
+    interests: Joi.string().required(),
     android_or_ios: Joi.string().required(),
+    technical_background: Joi.string().required(),
     activity_level: Joi.string().required(),
   });
 
@@ -57,7 +59,22 @@ app.post("/api/personalize_products", (req, res) => {
     return;
   }
 
-  const { age, sex, height, weight, android_or_ios, activity_level } = req.body;
+  const {
+    product_id,
+    age,
+    sex,
+    intrests,
+    android_or_ios,
+    technical_background,
+    activity_level,
+  } = req.body;
+
+  // get the spesific product JSON from producs
+  try {
+    const product = products[product_id];
+  } catch (error) {
+    res.status(500).json({ message: "Internal error" });
+  }
 });
 
 app.listen(process.env.PORT || 5000, () =>
