@@ -1,0 +1,35 @@
+.product-card-background {
+  height: 15em;
+  width: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  overflow: hidden;
+}
+
+.product-card-background :hover {
+  cursor: pointer;
+}
+
+.product-card-background img {
+  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.product-card-background h3 {
+  margin: 0;
+  white-space: nowrap;
+  width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card-background p {
+  margin: 0;
+}
