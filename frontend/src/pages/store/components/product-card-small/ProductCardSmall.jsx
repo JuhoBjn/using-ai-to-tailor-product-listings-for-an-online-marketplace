@@ -7,7 +7,9 @@ const ProductCardSmall = ({ id, name, price, image, showProductHandler }) => {
       onClick={() => showProductHandler(id)}
     >
       <img src={image} alt={`Product picture of ${name}`} />
-      <h3 className="product-name">{name}</h3>
+      <div className="product-card_name-container">
+        <h3 className="product-name">{name}</h3>
+      </div>{" "}
       <p className="product-price">{price} €</p>
     </div>
   );

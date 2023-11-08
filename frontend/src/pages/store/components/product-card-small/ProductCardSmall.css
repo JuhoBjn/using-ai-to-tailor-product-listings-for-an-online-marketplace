@@ -1,6 +1,6 @@
 .product-card-background {
-  height: 15em;
-  width: 12em;
+  height: 21em;
+  width: 17em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,12 +23,20 @@
   border-radius: 3px;
 }
 
-.product-card-background h3 {
-  margin: 0;
+.product-card_name-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-name {
+  text-align: center;
   white-space: nowrap;
-  width: 10em;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
 }
 
 .product-card-background p {
