@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import "./index.css";
 
 import Profile from "./pages/profile";
-import Store, { storeLoader } from "./pages/store";
+import Store from "./pages/store";
+import { storeLoader } from "./pages/store/loader";
 
 const router = createBrowserRouter([
   {
