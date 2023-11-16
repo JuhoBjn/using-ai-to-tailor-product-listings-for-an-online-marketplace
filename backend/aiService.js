@@ -33,7 +33,7 @@ const aiService = {
     // TODO: send stuff to OpenAI
     // Throw on error
 
-    // TODO: parse the response into a JSON object; throw on error
+    // TODO: parse the response; throw on error
 
     // Return the personalized product
     return {
