@@ -6,7 +6,8 @@
     "main_color": "Black",
     "target_age_group": "Adults and Teens",
     "target_customers": "Commuters, Students, and Urban Explorers",
-    "price": 399.99
+    "price": 399.99,
+    "image_url": "http://localhost:5000/api/images/0"
   },
   {
     "id": 1,
@@ -15,7 +16,8 @@
     "main_color": "Black",
     "target_age_group": "Adults and Students",
     "target_customers": "Tech Enthusiasts, Business Professionals, Students",
-    "price": 49.99
+    "price": 49.99,
+    "image_url": "http://localhost:5000/api/images/1"
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@
     "main_color": "Black",
     "target_age_group": "Adults and Teens",
     "target_customers": "Outdoor Adventurers, Sports Enthusiasts, Travelers",
-    "price": 99.99
+    "price": 99.99,
+    "image_url": "http://localhost:5000/api/images/2"
   },
   {
     "id": 3,
@@ -33,7 +36,8 @@
     "main_color": "Metallic Silver",
     "target_age_group": "Adults",
     "target_customers": "Home Chefs, Cooking Enthusiasts, Newlyweds",
-    "price": 199.99
+    "price": 199.99,
+    "image_url": "http://localhost:5000/api/images/3"
   },
   {
     "id": 4,
@@ -42,7 +46,8 @@
     "main_color": "Navy Blue",
     "target_age_group": "Adults and Seniors",
     "target_customers": "Meditation Practitioners, Yoga Enthusiasts, Wellness Seekers",
-    "price": 49.99
+    "price": 49.99,
+    "image_url": "http://localhost:5000/api/images/4"
   },
   {
     "id": 5,
@@ -51,7 +56,8 @@
     "main_color": "Blue",
     "target_age_group": "Children (Ages 4-10)",
     "target_customers": "Parents, Educators, Kids",
-    "price": 99.99
+    "price": 99.99,
+    "image_url": "http://localhost:5000/api/images/5"
   },
   {
     "id": 6,
@@ -60,7 +66,8 @@
     "main_color": "Red",
     "target_age_group": "Adults and Seniors",
     "target_customers": "Fitness Enthusiasts, Physical Therapy Patients, Athletes",
-    "price": 29.99
+    "price": 29.99,
+    "image_url": "http://localhost:5000/api/images/6"
   },
   {
     "id": 7,
@@ -69,7 +76,8 @@
     "main_color": "White",
     "target_age_group": "Adults and Families",
     "target_customers": "Allergy Sufferers, Pet Owners, Health-Conscious Individuals",
-    "price": 199.99
+    "price": 199.99,
+    "image_url": "http://localhost:5000/api/images/7"
   },
   {
     "id": 8,
@@ -78,7 +86,8 @@
     "main_color": "Bronze",
     "target_age_group": "Adults",
     "target_customers": "Gardeners, Homeowners, Outdoor Enthusiasts",
-    "price": 39.99
+    "price": 39.99,
+    "image_url": "http://localhost:5000/api/images/8"
   },
   {
     "id": 9,
@@ -87,6 +96,7 @@
     "main_color": "Black",
     "target_age_group": "Adults and Book Enthusiasts",
     "target_customers": "Book Lovers, Interior Designers, Home Decor Enthusiasts",
-    "price": 599.99
+    "price": 599.99,
+    "image_url": "http://localhost:5000/api/images/9"
   }
 ]

@@ -17,6 +17,34 @@ const aiService = {
 
     return completion.choices[0].message.content;
   },
+  personalizeProduct: async (productDetails, personDetails) => {
+    const {
+      name,
+      description,
+      main_color,
+      target_age_group,
+      target_customers,
+      price,
+    } = productDetails;
+
+    const { age, sex, height, weight, mobile_platform, activity_level } =
+      personDetails;
+
+    // TODO: send stuff to OpenAI
+    // Throw on error
+
+    // TODO: parse the response into a JSON object; throw on error
+
+    // Return the personalized product
+    return {
+      name,
+      description,
+      main_color,
+      target_age_group,
+      target_customers,
+      price,
+    };
+  },
 };
 
 export default aiService;

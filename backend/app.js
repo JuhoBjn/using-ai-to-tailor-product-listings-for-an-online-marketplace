@@ -16,11 +16,13 @@ app.use(cors());
 
 app.use(express.json());
 
+// return all the products
 app.get("/api/products", (req, res) => {
   // map the products and add a index (product_id) to all the products
-  res.json(products);
+  return res.status(200).json(products);
 });
 
+// Just for testing
 app.post("/api/ask", async (req, res) => {
   const schema = Joi.object({
     question: Joi.string().required(),
@@ -29,27 +31,26 @@ app.post("/api/ask", async (req, res) => {
 
   const { error } = schema.validate(req.body);
   if (error) {
-    res.status(400).json({ error: error.details[0].message });
-    return;
+    return res.status(400).json({ error: error.details[0].message });
   }
 
   const { question, context } = req.body;
   try {
     const answer = await aiService.ask(question, context);
-    res.json({ answer });
+    return res.status(200).json({ answer });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 });
 
-app.post("/api/personalize_product", (req, res) => {
+app.post("/api/personalize_product", async (req, res) => {
   const schema = Joi.object({
-    product_id: Joi.number().required,
+    product_id: Joi.number().required(),
     age: Joi.number().required(),
     sex: Joi.string().required(),
-    interests: Joi.string().required(),
-    android_or_ios: Joi.string().required(),
-    technical_background: Joi.string().required(),
+    height: Joi.number().required(),
+    weight: Joi.number().required(),
+    mobile_platform: Joi.string().required(),
     activity_level: Joi.string().required(),
   });
 
@@ -63,18 +64,51 @@ app.post("/api/personalize_product", (req, res) => {
     product_id,
     age,
     sex,
-    intrests,
-    android_or_ios,
-    technical_background,
+    height,
+    weight,
+    mobile_platform,
     activity_level,
   } = req.body;
 
-  // get the spesific product JSON from producs
+  // get the spesific product JSON from products
   try {
     const product = products[product_id];
+    if (!product) {
+      res.status(400).json({ error: "Product not found" });
+      return;
+    }
+
+    // send the details to the AI service for personalization
+    const personalized_product = await aiService.personalizeProduct(product, {
+      age,
+      sex,
+      height,
+      weight,
+      mobile_platform,
+      activity_level,
+    });
+
+    const response = {
+      ...personalized_product,
+      product_id,
+      image_url: product.image_url, // for now, use the same image as the original product
+    };
+
+    res.json(response);
   } catch (error) {
     res.status(500).json({ message: "Internal error" });
   }
+});
+
+// serve the images from the images folder
+app.get("/api/images/:product_id", async (req, res) => {
+  const { product_id } = req.params;
+  const product = products[product_id];
+  if (!product) {
+    return res.status(404).json({ error: "Product not found" });
+  }
+
+  return res.sendFile(product_id + ".jpg", { root: "./images" });
 });
 
 app.listen(process.env.PORT || 5000, () =>
