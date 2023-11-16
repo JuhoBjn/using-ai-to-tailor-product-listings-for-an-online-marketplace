@@ -1,82 +1,92 @@
 [
   {
-    "product_name": "EcoGlide Electric Scooter",
-    "super_specific_and_detailed_product_description": "The EcoGlide Electric Scooter is a high-performance electric scooter designed for urban commuters. It features a powerful 350W motor that can reach speeds of up to 20 mph, and a rechargeable lithium-ion battery that provides a range of up to 15 miles on a single charge. The scooter is foldable for easy storage and portability, and it comes with a digital display for speed and battery monitoring.",
-    "product_colors": ["Black", "White", "Red", "Blue"],
-    "product_height": "42 inches",
-    "product_age_group": "Adults and Teens",
-    "product_users": "Commuters, Students, and Urban Explorers"
+    "id": 0,
+    "name": "EcoGlide Electric Scooter",
+    "description": "The EcoGlide Electric Scooter is a high-performance electric scooter designed for urban commuters. It features a powerful 350W motor that can reach speeds of up to 20 mph, and a rechargeable lithium-ion battery that provides a range of up to 15 miles on a single charge. The scooter is foldable for easy storage and portability, and it comes with a digital display for speed and battery monitoring.",
+    "main_color": "Black",
+    "target_age_group": "Adults and Teens",
+    "target_customers": "Commuters, Students, and Urban Explorers",
+    "price": 399.99
   },
   {
-    "product_name": "TechMaster Pro Laptop Backpack",
-    "super_specific_and_detailed_product_description": "The TechMaster Pro Laptop Backpack is a versatile backpack designed for tech-savvy individuals. It features a dedicated padded compartment that can fit laptops up to 15.6 inches, multiple organizer pockets for cables and accessories, and a built-in USB charging port. The backpack is made of water-resistant material, and the ergonomic design ensures comfort during long commutes.",
-    "product_colors": ["Black", "Gray", "Navy", "Charcoal"],
-    "product_height": "18 inches",
-    "product_age_group": "Adults and Students",
-    "product_users": "Tech Enthusiasts, Business Professionals, Students"
+    "id": 1,
+    "name": "TechMaster Pro Laptop Backpack",
+    "description": "The TechMaster Pro Laptop Backpack is a versatile backpack designed for tech-savvy individuals. It features a dedicated padded compartment that can fit laptops up to 15.6 inches, multiple organizer pockets for cables and accessories, and a built-in USB charging port. The backpack is made of water-resistant material, and the ergonomic design ensures comfort during long commutes.",
+    "main_color": "Black",
+    "target_age_group": "Adults and Students",
+    "target_customers": "Tech Enthusiasts, Business Professionals, Students",
+    "price": 49.99
   },
   {
-    "product_name": "AdventureTech Waterproof Action Camera",
-    "super_specific_and_detailed_product_description": "The AdventureTech Waterproof Action Camera is a rugged and compact camera built for outdoor enthusiasts. It can capture 4K ultra HD video and 12MP photos with its wide-angle lens. This camera is waterproof up to 33 feet, shockproof, and equipped with built-in Wi-Fi for easy sharing and remote control. It comes with a variety of mounts and accessories for versatile mounting options.",
-    "product_colors": ["Black", "Silver", "Red", "Yellow"],
-    "product_height": "2.4 inches",
-    "product_age_group": "Adults and Teens",
-    "product_users": "Outdoor Adventurers, Sports Enthusiasts, Travelers"
+    "id": 2,
+    "name": "AdventureTech Waterproof Action Camera",
+    "description": "The AdventureTech Waterproof Action Camera is a rugged and compact camera built for outdoor enthusiasts. It can capture 4K ultra HD video and 12MP photos with its wide-angle lens. This camera is waterproof up to 33 feet, shockproof, and equipped with built-in Wi-Fi for easy sharing and remote control. It comes with a variety of mounts and accessories for versatile mounting options.",
+    "main_color": "Black",
+    "target_age_group": "Adults and Teens",
+    "target_customers": "Outdoor Adventurers, Sports Enthusiasts, Travelers",
+    "price": 99.99
   },
   {
-    "product_name": "GourmetChef 10-Piece Cookware Set",
-    "super_specific_and_detailed_product_description": "The GourmetChef 10-Piece Cookware Set is a premium collection of kitchen essentials. It includes a variety of pots, pans, and utensils made of durable stainless steel. The cookware features a triple-layer non-stick coating for easy food release and even heat distribution. The ergonomic handles stay cool, and the set is compatible with all stovetops, including induction.",
-    "product_colors": ["Stainless Steel", "Black", "Copper", "Red"],
-    "product_height": "Various Sizes",
-    "product_age_group": "Adults",
-    "product_users": "Home Chefs, Cooking Enthusiasts, Newlyweds"
+    "id": 3,
+    "name": "GourmetChef 10-Piece Cookware Set",
+    "description": "The GourmetChef 10-Piece Cookware Set is a premium collection of kitchen essentials. It includes a variety of pots, pans, and utensils made of durable stainless steel. The cookware features a triple-layer non-stick coating for easy food release and even heat distribution. The ergonomic handles stay cool, and the set is compatible with all stovetops, including induction.",
+    "main_color": "Metallic Silver",
+    "target_age_group": "Adults",
+    "target_customers": "Home Chefs, Cooking Enthusiasts, Newlyweds",
+    "price": 199.99
   },
   {
-    "product_name": "ZenMind Meditation Cushion",
-    "super_specific_and_detailed_product_description": "The ZenMind Meditation Cushion is designed to enhance your meditation experience. It's filled with eco-friendly buckwheat hulls that conform to your body for comfortable and ergonomic seating. The cushion has a removable and washable cover, a carry handle, and is available in various sizes to suit your meditation needs.",
-    "product_colors": ["Navy Blue", "Sage Green", "Plum", "Charcoal Gray"],
-    "product_height": "6 inches",
-    "product_age_group": "Adults and Seniors",
-    "product_users": "Meditation Practitioners, Yoga Enthusiasts, Wellness Seekers"
+    "id": 4,
+    "name": "ZenMind Meditation Cushion",
+    "description": "The ZenMind Meditation Cushion is designed to enhance your meditation experience. It's filled with eco-friendly buckwheat hulls that conform to your body for comfortable and ergonomic seating. The cushion has a removable and washable cover, a carry handle, and is available in various sizes to suit your meditation needs.",
+    "main_color": "Navy Blue",
+    "target_age_group": "Adults and Seniors",
+    "target_customers": "Meditation Practitioners, Yoga Enthusiasts, Wellness Seekers",
+    "price": 49.99
   },
   {
-    "product_name": "RoboBuddy AI Learning Robot",
-    "super_specific_and_detailed_product_description": "The RoboBuddy AI Learning Robot is an educational companion for kids. It's equipped with artificial intelligence that adapts to a child's learning pace. The robot can teach math, science, and language through interactive games and activities. It has expressive LED eyes, can dance, and features parental controls for safe use.",
-    "product_colors": ["Blue", "Pink", "Yellow", "Green"],
-    "product_height": "12 inches",
-    "product_age_group": "Children (Ages 4-10)",
-    "product_users": "Parents, Educators, Kids"
+    "id": 5,
+    "name": "RoboBuddy AI Learning Robot",
+    "description": "The RoboBuddy AI Learning Robot is an educational companion for kids. It's equipped with artificial intelligence that adapts to a child's learning pace. The robot can teach math, science, and language through interactive games and activities. It has expressive LED eyes, can dance, and features parental controls for safe use.",
+    "main_color": "Blue",
+    "target_age_group": "Children (Ages 4-10)",
+    "target_customers": "Parents, Educators, Kids",
+    "price": 99.99
   },
   {
-    "product_name": "FitLife Pro Resistance Bands Set",
-    "super_specific_and_detailed_product_description": "The FitLife Pro Resistance Bands Set is a comprehensive fitness tool for strength training and rehabilitation. It includes five resistance bands with varying levels of resistance, foam handles, ankle straps, and a door anchor. These bands are made of high-quality latex and are suitable for a wide range of exercises, from yoga to full-body workouts.",
-    "product_colors": ["Red", "Blue", "Green", "Yellow", "Black"],
-    "product_height": "48 inches",
-    "product_age_group": "Adults and Seniors",
-    "product_users": "Fitness Enthusiasts, Physical Therapy Patients, Athletes"
+    "id": 6,
+    "name": "FitLife Pro Resistance Bands Set",
+    "description": "The FitLife Pro Resistance Bands Set is a comprehensive fitness tool for strength training and rehabilitation. It includes five resistance bands with varying levels of resistance, foam handles, ankle straps, and a door anchor. These bands are made of high-quality latex and are suitable for a wide range of exercises, from yoga to full-body workouts.",
+    "main_color": "Red",
+    "target_age_group": "Adults and Seniors",
+    "target_customers": "Fitness Enthusiasts, Physical Therapy Patients, Athletes",
+    "price": 29.99
   },
   {
-    "product_name": "BioGuard Air Purifier",
-    "super_specific_and_detailed_product_description": "The BioGuard Air Purifier is a cutting-edge air purification system that uses HEPA and activated carbon filters to remove 99.97% of airborne particles, including dust, pollen, pet dander, and odors. It features smart sensors to monitor air quality, a quiet operation mode, and a sleek, space-saving design. The air purifier is suitable for rooms up to 300 square feet.",
-    "product_colors": ["White", "Black", "Silver"],
-    "product_height": "21 inches",
-    "product_age_group": "Adults and Families",
-    "product_users": "Allergy Sufferers, Pet Owners, Health-Conscious Individuals"
+    "id": 7,
+    "name": "BioGuard Air Purifier",
+    "description": "The BioGuard Air Purifier is a cutting-edge air purification system that uses HEPA and activated carbon filters to remove 99.97% of airborne particles, including dust, pollen, pet dander, and odors. It features smart sensors to monitor air quality, a quiet operation mode, and a sleek, space-saving design. The air purifier is suitable for rooms up to 300 square feet.",
+    "main_color": "White",
+    "target_age_group": "Adults and Families",
+    "target_customers": "Allergy Sufferers, Pet Owners, Health-Conscious Individuals",
+    "price": 199.99
   },
   {
-    "product_name": "SolarGlow LED Garden Lights",
-    "super_specific_and_detailed_product_description": "The SolarGlow LED Garden Lights add elegance and illumination to your outdoor space. These solar-powered lights automatically turn on at dusk and provide a warm, ambient glow throughout the night. They are weather-resistant and come with easy installation stakes. The lights have a vintage design with real glass lenses for a timeless look.",
-    "product_colors": ["Bronze", "Stainless Steel", "Black"],
-    "product_height": "16 inches",
-    "product_age_group": "Adults",
-    "product_users": "Gardeners, Homeowners, Outdoor Enthusiasts"
+    "id": 8,
+    "name": "SolarGlow LED Garden Lights",
+    "description": "The SolarGlow LED Garden Lights add elegance and illumination to your outdoor space. These solar-powered lights automatically turn on at dusk and provide a warm, ambient glow throughout the night. They are weather-resistant and come with easy installation stakes. The lights have a vintage design with real glass lenses for a timeless look.",
+    "main_color": "Bronze",
+    "target_age_group": "Adults",
+    "target_customers": "Gardeners, Homeowners, Outdoor Enthusiasts",
+    "price": 39.99
   },
   {
-    "product_name": "BookNook Floating Bookshelf",
-    "super_specific_and_detailed_product_description": "The BookNook Floating Bookshelf is a unique and functional way to display your favorite books. It mounts on the wall and gives the illusion that your books are floating in the air. The sturdy metal construction can hold up to 15 pounds of books, and it includes invisible mounting hardware for a clean and minimalist look. This floating bookshelf is a conversation starter and a space-saving solution for book lovers and interior design enthusiasts.",
-    "product_colors": ["Black", "White", "Silver"],
-    "product_height": "5 inches",
-    "product_age_group": "Adults and Book Enthusiasts",
-    "product_users": "Book Lovers, Interior Designers, Home Decor Enthusiasts"
+    "id": 9,
+    "name": "BookNook Floating Bookshelf",
+    "description": "The BookNook Floating Bookshelf is a unique and functional way to display your favorite books. It mounts on the wall and gives the illusion that your books are floating in the air. The sturdy metal construction can hold up to 15 pounds of books, and it includes invisible mounting hardware for a clean and minimalist look. This floating bookshelf is a conversation starter and a space-saving solution for book lovers and interior design enthusiasts.",
+    "main_color": "Black",
+    "target_age_group": "Adults and Book Enthusiasts",
+    "target_customers": "Book Lovers, Interior Designers, Home Decor Enthusiasts",
+    "price": 599.99
   }
 ]
