@@ -27,23 +27,80 @@ const aiService = {
       price,
     } = productDetails;
 
-    const { age, sex, height, weight, mobile_platform, activity_level } =
-      personDetails;
+    if (process.env.PERSONALIZATION_DISABLED != "true") {
+      const { age, sex, height, weight, mobile_platform, activity_level } =
+        personDetails;
 
-    // TODO: send stuff to OpenAI
-    // Throw on error
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a chatbot that personalizes product details for a person. You only respond with JSON. You will get paid $10 for each successful personalization. Respond with the following JSON schema:",
+          },
+          {
+            role: "system",
+            content: `{\n  "name": "string",\n  "description": "string",\n  "main_color": "string",\n  "target_age_group": "string",\n  "target_customers": "string",\n  "price": "number"\n}`,
+          },
+          {
+            role: "system",
+            content:
+              "You will be given a product JSON and a person JSON. You must personalize the details given in the product JSON so they would be more suitable for the person described in the person JSON. You have to modify the contents to suit the needs of the consumer better. You must respond with a JSON document that matches the above schema. Remember to respond only with the JSON string, else you will not get paid. Also remember that you must customize the product details to suit the person better, you can not respond with just the same product JSON that you were given.",
+          },
+          {
+            role: "user",
+            content: `Product JSON:\n${JSON.stringify(
+              productDetails,
+              null,
+              2
+            )}`,
+          },
+          {
+            role: "user",
+            content: `Person JSON:\n${JSON.stringify(personDetails, null, 2)}`,
+          },
+        ],
+      });
 
-    // TODO: parse the response; throw on error
+      console.log(completion);
+      console.log(JSON.stringify(completion, null, 2));
 
-    // Return the personalized product
-    return {
-      name,
-      description,
-      main_color,
-      target_age_group,
-      target_customers,
-      price,
-    };
+      // get the json string from the response
+      const jsonStr = completion.choices[0].message.content;
+
+      let parsedJson = null;
+      try {
+        // parse the json string
+        parsedJson = JSON.parse(jsonStr);
+      } catch (e) {
+        // return null if the json string is invalid
+        log.error(e);
+        log.error("Failed to parse JSON string: " + jsonStr);
+        return null;
+      }
+    }
+
+    if (process.env.PERSONALIZATION_DISABLED === "true") {
+      return {
+        name,
+        description,
+        main_color,
+        target_age_group,
+        target_customers,
+        price,
+      };
+    } else {
+      // Return the personalized product details
+      return {
+        name: parsedJson.name,
+        description: parsedJson.description,
+        main_color: parsedJson.main_color,
+        target_age_group: parsedJson.target_age_group,
+        target_customers: parsedJson.target_customers,
+        price: parsedJson.price,
+      };
+    }
   },
 
   generateImage: async (prompt) => {
