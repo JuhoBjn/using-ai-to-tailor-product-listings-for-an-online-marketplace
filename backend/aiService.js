@@ -45,6 +45,24 @@ const aiService = {
       price,
     };
   },
+
+  generateImage: async (prompt) => {
+    const res = await openai.images.generate({
+      // docs: https://platform.openai.com/docs/api-reference/images/create
+      prompt: prompt,
+      model: "dall-e-3",
+      n: 1,
+      size: "1024x1024",
+      response_format: "url",
+      quality: "hd",
+    });
+
+    console.log("Generated image");
+    console.log(res);
+    console.log(JSON.stringify(res, null, 2));
+
+    return res;
+  },
 };
 
 export default aiService;
