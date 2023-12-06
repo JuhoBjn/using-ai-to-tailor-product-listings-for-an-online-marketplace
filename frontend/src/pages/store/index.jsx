@@ -1,68 +1,50 @@
-import { useState, useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { useLoaderData, useLocation, useSearchParams } from "react-router-dom";
 
 import ProductList from "./components/product-list/ProductList";
 import ProductCardLarge from "./components/product-card-large/ProductCardLarge";
 import Backdrop from "./components/backdrop/Backdrop";
 
-import testImage from "/home/juho/kurssit/using-ai-to-tailor-product-listings-for-an-online-marketplace/frontend/src/assets/shark-in-a-glass.png";
-
 import "./Store.css";
+import { getTailoredProduct } from "../../utils/ProductsAPI";
 
-const DUMMY_PRODUCTS = [
-  {
-    id: 1,
-    name: "Shark in a glass of water",
-    description:
-      "Exactly as it says on the box. This is a miniature shark inside a glass of water.",
-    price: 100,
-    image: testImage,
-  },
-  {
-    id: 2,
-    name: "Water",
-    description: "A simple glass of water. Shark not included.",
-    price: 5,
-    image: testImage,
-  },
-  {
-    id: 3,
-    name: "Water glass",
-    description:
-      "A drinking glass. Perfect for any beverage. Image is a serving recommendation. Shark and water not included.",
-    price: 8.5,
-    image: testImage,
-  },
-  {
-    id: 4,
-    name: "Small shark",
-    description:
-      "A miniature shark. A pico white shark. This cute little swimmer makes for a perfect pet. Fits in a drinking glass.",
-    price: 86.5,
-    image: testImage,
-  },
-  {
-    id: 5,
-    name: "White table",
-    description:
-      "A white dinner table for six people. Legs are maple and the tabletop is Red Oak.",
-    price: 50,
-    image: testImage,
-  },
-];
+function useQuery() {
+  const { search } = useLocation();
+
+  return useMemo(() => new URLSearchParams(search), [search]);
+}
 
 const Store = () => {
-  const [products] = useState(DUMMY_PRODUCTS);
+  const [products] = useState(useLoaderData());
   const [showLargeProductCard, setShowLargeProductCard] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [userDetails, setUserDetails] = useState(null);
+  const query = useQuery();
 
   useEffect(() => {
-    console.log(products);
-  }, [products]);
+    // get the user details from the query parameters
+    const age = query.get("age");
+    const sex = query.get("sex");
+    const height = query.get("height");
+    const weight = query.get("weight");
+    const mobilePlatform = query.get("mobilePlatform");
+    const activityLevel = query.get("activityLevel");
 
-  const showProductHandler = (productId) => {
+    setUserDetails({
+      age: age,
+      sex: sex,
+      height: height,
+      weight: weight,
+      mobile_platform: mobilePlatform,
+      activity_level: activityLevel,
+    });
+  }, [query]);
+
+  const showProductHandler = async (productId) => {
     console.log("Show product: ", productId);
     const product = products.find((p) => p.id === productId);
+    const product = await getTailoredProduct(userDetails, productId);
+    console.log(product);
     if (product) {
       setSelectedProduct(product);
       setShowLargeProductCard(true);
@@ -99,7 +81,7 @@ const Store = () => {
       )}
       <div className="product-list-container">
         <ProductList
-          products={DUMMY_PRODUCTS}
+          products={products}
           showProductHandler={showProductHandler}
         />
       </div>
