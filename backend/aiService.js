@@ -29,9 +29,6 @@ const aiService = {
 
     let parsedJson = null;
     if (process.env.PERSONALIZATION_DISABLED != "true") {
-      const { age, sex, height, weight, mobile_platform, activity_level } =
-        personDetails;
-
       const completion = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [
