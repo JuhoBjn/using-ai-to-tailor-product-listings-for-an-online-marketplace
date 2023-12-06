@@ -78,6 +78,9 @@ app.post("/api/personalize_product", async (req, res) => {
       return;
     }
 
+    console.log("Personalizing product: ", `#${product_id} - ${product.name}`);
+    console.log("With details: ", req.body);
+
     // send the details to the AI service for personalization
     const personalized_product = await aiService.personalizeProduct(product, {
       age,
@@ -94,9 +97,10 @@ app.post("/api/personalize_product", async (req, res) => {
       image_url: product.image_url, // for now, use the same image as the original product
     };
 
-    res.json(response);
+    return res.json(response);
   } catch (error) {
-    res.status(500).json({ message: "Internal error" });
+    console.error(error);
+    return res.status(500).json({ message: "Internal error" });
   }
 });
 
