@@ -1,0 +1,119 @@
+.product-card-large_container {
+  height: fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-style: none;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.519);
+  padding: 2em;
+}
+
+.product-card-large_header {
+  height: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.product-card-large_close-button-container {
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
+
+#cross-1 {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: black;
+  clip-path: polygon(90% 0%, 100% 10%, 10% 100%, 0% 90%);
+}
+
+#cross-2 {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: -100%;
+  left: 0;
+  background-color: black;
+  clip-path: polygon(90% 0%, 100% 10%, 10% 100%, 0% 90%);
+  rotate: 90deg;
+}
+
+.product-card-large_body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-card-large_image-container {
+  height: 25em;
+  width: 25em;
+  margin: 1em;
+}
+
+.product-card-large_image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.product-card-large_content {
+  height: 100%;
+  width: 25em;
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 1em;
+  overflow: hidden;
+}
+
+.product-card-large_content-actions {
+  height: fit-content;
+  width: 100%;
+  position: relative;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.product-card-large_content-actions button {
+  padding: 10px;
+  border-style: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.457);
+  color: white;
+}
+
+.product-card-large_content-actions button:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+  scale: 105%;
+}
+
+.product-card-large_content-actions button:active {
+  scale: 100%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.457);
+}
+
+#add-to-wishlist-button {
+  background-color: #2828ff;
+}
+
+#add-to-cart-button {
+  background-color: rgb(0, 170, 0);
+}

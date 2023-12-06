@@ -1,0 +1,46 @@
+.product-card-background {
+  height: 21em;
+  width: 17em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.7);
+  padding: 1em;
+  overflow: hidden;
+}
+
+.product-card-background :hover {
+  cursor: pointer;
+}
+
+.product-card-background img {
+  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+}
+
+.product-card_name-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-name {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.product-card-background p {
+  width: 100%;
+  text-align: right;
+  margin: 0;
+}
