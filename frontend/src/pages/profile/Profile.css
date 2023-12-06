@@ -88,3 +88,7 @@ input {
   padding: 10px;
   margin-top: 1.5em;
 }
+
+.user-profile-form_container button:hover {
+  cursor: pointer;
+}
