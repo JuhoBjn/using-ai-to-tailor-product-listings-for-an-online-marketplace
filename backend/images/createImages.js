@@ -1,5 +1,5 @@
 import "dotenv/config";
-import aiService from "./aiService.js";
+import aiService from "../aiService.js";
 import fs, { readFileSync } from "fs";
 import path from "path";
 import { Readable } from "stream";
@@ -14,7 +14,7 @@ const downloadFile = async (url, filePath) => {
 
 const main = async () => {
   // load products from JSON file
-  const products = JSON.parse(readFileSync("./products.json", "utf8"));
+  const products = JSON.parse(readFileSync("../products.json", "utf8"));
 
   // generate images for each product
   for (const product of products) {
@@ -27,7 +27,7 @@ const main = async () => {
     const url = res.data[0].url;
 
     // save the image to a file
-    const imagePath = path.join("./images", `${product.id}.jpg`);
+    const imagePath = path.join(`${product.id}.jpg`);
 
     console.log(`Downloading image #${product.id + 1} of ${products.length}`);
     await downloadFile(url, imagePath);
