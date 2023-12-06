@@ -10,8 +10,21 @@ const Profile = () => {
   const mobilePlatformRef = useRef("ios");
   const activityLevelRef = useRef("average");
 
-  const submitUserProfile = () => {
-    console.log("Send user profile to backend and request products.");
+  const submitUserProfile = (e) => {
+    e.preventDefault();
+
+    // add the profile details as query parameters to the store page
+    // then redirect to the store page with the query parameters
+    const queryParams = new URLSearchParams();
+    queryParams.append("age", ageRef.current.value);
+    queryParams.append("sex", sexRef.current.value);
+    queryParams.append("height", heightRef.current.value);
+    queryParams.append("weight", weightRef.current.value);
+    queryParams.append("mobilePlatform", mobilePlatformRef.current.value);
+    queryParams.append("activityLevel", activityLevelRef.current.value);
+
+    const queryString = queryParams.toString();
+    window.location.href = `/store?${queryString}`;
   };
 
   return (
@@ -26,7 +39,7 @@ const Profile = () => {
             <option value="male">male</option>
             <option value="female">female</option>
             <option value="other">other</option>
-            <option value="dont-specify">I&apos;t rather not specify</option>
+            <option value="dont-specify">I&apos;d rather not specify</option>
           </select>
           <label htmlFor="height">Height (cm)</label>
           <input id="height" type="number" min="1" ref={heightRef} required />
@@ -40,6 +53,7 @@ const Profile = () => {
               name="mobile-platform"
               value="android"
               ref={mobilePlatformRef}
+              required
             />
             <label htmlFor="mobile-android">Android</label>
             <input
@@ -48,11 +62,18 @@ const Profile = () => {
               name="mobile-platform"
               value="ios"
               ref={mobilePlatformRef}
+              required
             />
             <label htmlFor="mobile-ios">iOS</label>
           </div>
           <label htmlFor="activity-level">Activity level</label>
-          <input id="activity-level" type="text" ref={activityLevelRef} />
+          <input
+            id="activity-level"
+            type="text"
+            ref={activityLevelRef}
+            required
+            minLength={1}
+          />
           <button>Personalize products</button>
         </form>
       </div>
