@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useLoaderData, useLocation, useSearchParams } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 
 import ProductList from "./components/product-list/ProductList";
 import ProductCardLarge from "./components/product-card-large/ProductCardLarge";
@@ -20,6 +20,7 @@ const Store = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
   const query = useQuery();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // get the user details from the query parameters
@@ -42,8 +43,9 @@ const Store = () => {
 
   const showProductHandler = async (productId) => {
     console.log("Show product: ", productId);
-    const product = products.find((p) => p.id === productId);
+    setLoading(true);
     const product = await getTailoredProduct(userDetails, productId);
+    setLoading(false);
     console.log(product);
     if (product) {
       setSelectedProduct(product);
@@ -67,6 +69,11 @@ const Store = () => {
 
   return (
     <div className="store-background">
+      {loading && (
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
+      )}
       <h1>Store page</h1>
       {showLargeProductCard && (
         <>
