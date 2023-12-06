@@ -13,7 +13,7 @@ const ProductList = ({ products, showProductHandler }) => {
         <ProductCardSmall
           key={product.id}
           id={product.id}
-          image={product.image}
+          image={product.image_url}
           name={product.name}
           price={product.price}
           showProductHandler={showProductHandler}

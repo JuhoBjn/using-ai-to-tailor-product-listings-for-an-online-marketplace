@@ -21,7 +21,7 @@ const ProductCardLarge = ({
       </div>
       <div className="product-card-large_body">
         <div className="product-card-large_image-container">
-          <img src={product.image} alt="Product picture" />
+          <img src={product.image_url} alt="Product picture" />
         </div>
         <div className="product-card-large_content">
           <h1>{product.name}</h1>
