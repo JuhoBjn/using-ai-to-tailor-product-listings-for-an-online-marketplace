@@ -27,6 +27,7 @@ const aiService = {
       price,
     } = productDetails;
 
+    let parsedJson = null;
     if (process.env.PERSONALIZATION_DISABLED != "true") {
       const { age, sex, height, weight, mobile_platform, activity_level } =
         personDetails;
@@ -69,7 +70,6 @@ const aiService = {
       // get the json string from the response
       const jsonStr = completion.choices[0].message.content;
 
-      let parsedJson = null;
       try {
         // parse the json string
         parsedJson = JSON.parse(jsonStr);
@@ -77,7 +77,7 @@ const aiService = {
         // return null if the json string is invalid
         log.error(e);
         log.error("Failed to parse JSON string: " + jsonStr);
-        return null;
+        throw e;
       }
     }
 
