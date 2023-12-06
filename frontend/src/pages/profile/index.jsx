@@ -8,11 +8,10 @@ const Profile = () => {
   const heightRef = useRef(1);
   const weightRef = useRef(1);
   const mobilePlatformRef = useRef("ios");
+  const activityLevelRef = useRef("average");
 
-  const submitUserProfile = (event) => {
-    event.preventDefault();
-
-    console.log("Submit user profile");
+  const submitUserProfile = () => {
+    console.log("Send user profile to backend and request products.");
   };
 
   return (
@@ -53,7 +52,7 @@ const Profile = () => {
             <label htmlFor="mobile-ios">iOS</label>
           </div>
           <label htmlFor="activity-level">Activity level</label>
-          <input id="activity-level" type="text" />
+          <input id="activity-level" type="text" ref={activityLevelRef} />
           <button>Personalize products</button>
         </form>
       </div>

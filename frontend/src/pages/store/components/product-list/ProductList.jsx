@@ -16,7 +16,7 @@ const ProductList = ({ products, showProductHandler }) => {
           image={product.image}
           name={product.name}
           price={product.price}
-          showProduct={showProductHandler}
+          showProductHandler={showProductHandler}
         />
       ))}
     </ul>
