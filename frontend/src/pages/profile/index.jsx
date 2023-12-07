@@ -7,11 +7,19 @@ const Profile = () => {
   const sexRef = useRef("dont-specify");
   const heightRef = useRef(1);
   const weightRef = useRef(1);
-  const mobilePlatformRef = useRef("ios");
+  const iosPlatformRef = useRef(null);
+  const androidPlatformRef = useRef(null);
   const activityLevelRef = useRef("average");
 
   const submitUserProfile = (e) => {
     e.preventDefault();
+
+    let mobilePlatform;
+    if (androidPlatformRef.current.checked) {
+      mobilePlatform = "android";
+    } else if (iosPlatformRef.current.checked) {
+      mobilePlatform = "ios";
+    }
 
     // add the profile details as query parameters to the store page
     // then redirect to the store page with the query parameters
@@ -20,7 +28,7 @@ const Profile = () => {
     queryParams.append("sex", sexRef.current.value);
     queryParams.append("height", heightRef.current.value);
     queryParams.append("weight", weightRef.current.value);
-    queryParams.append("mobilePlatform", mobilePlatformRef.current.value);
+    queryParams.append("mobilePlatform", mobilePlatform);
     queryParams.append("activityLevel", activityLevelRef.current.value);
 
     const queryString = queryParams.toString();
@@ -52,7 +60,7 @@ const Profile = () => {
               type="radio"
               name="mobile-platform"
               value="android"
-              ref={mobilePlatformRef}
+              ref={androidPlatformRef}
               required
             />
             <label htmlFor="mobile-android">Android</label>
@@ -61,7 +69,7 @@ const Profile = () => {
               type="radio"
               name="mobile-platform"
               value="ios"
-              ref={mobilePlatformRef}
+              ref={iosPlatformRef}
               required
             />
             <label htmlFor="mobile-ios">iOS</label>
